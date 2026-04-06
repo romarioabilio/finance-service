@@ -1,19 +1,17 @@
-# Painel Financeiro Pessoal
+# Finance Service
 
-Aplicacao em Streamlit com visual mais limpo e foco em uso pessoal para acompanhar receitas, gastos, aportes e metas financeiras.
+Aplicação em Streamlit com experiência de produto mais forte para gestão financeira pessoal, com dashboards, orçamentos, metas, recorrências e operação completa dentro do próprio app.
 
 ## O que esta pronto
 
-- Painel mensal com receitas, gastos, aportes e saldo livre
-- Score de saude financeira do mes
-- Visual mais minimalista e profissional
-- Historico de gastos por categoria
-- Evolucao do patrimonio investido
-- Simulador de metas com retorno esperado, volatilidade e aporte extra
-- Formularios para cadastrar gasto, receita e aporte
-- Cadastro de metas dentro do proprio app
-- Edicao direta de dados com filtros e exclusao com confirmacao
-- Suporte a `CSV` local e estrutura pronta para `Google Sheets`
+- Visão geral executiva do mês
+- Score de saúde financeira
+- Orçamentos por categoria
+- Gestão de metas com projeção determinística e Monte Carlo
+- Recorrências mensais
+- Insights e reflexão sobre consumo
+- Cadastro e edição completa de gastos, receitas, investimentos, metas, orçamentos e recorrências
+- Suporte a CSV local e Google Sheets
 
 ## Estrutura
 
@@ -25,7 +23,9 @@ Aplicacao em Streamlit com visual mais limpo e foco em uso pessoal para acompanh
 |   |-- lancamentos.csv
 |   |-- receitas.csv
 |   |-- aportes.csv
-|   `-- metas.csv
+|   |-- metas.csv
+|   |-- orcamentos.csv
+|   `-- recorrencias.csv
 `-- .streamlit/
     `-- secrets.toml.example
 ```
@@ -55,7 +55,15 @@ Colunas: `data,valor,tipo`
 
 ### `data/metas.csv`
 
-Colunas: `nome_meta,valor_alvo,data_limite,saldo_inicial`
+Colunas: `nome_meta,valor_alvo,data_limite,saldo_inicial,prioridade,status`
+
+### `data/orcamentos.csv`
+
+Colunas: `mes,categoria,orcado,alerta`
+
+### `data/recorrencias.csv`
+
+Colunas: `tipo,categoria,descricao,valor,dia_vencimento,status,observacao`
 
 ## Google Sheets
 
@@ -65,11 +73,11 @@ Colunas: `nome_meta,valor_alvo,data_limite,saldo_inicial`
 4. Compartilhe a planilha com o e-mail da service account.
 5. Ative a chave `Usar Google Sheets` no app.
 
-## Experiencia
+## Modo de uso
 
-O app foi ajustado para funcionar como um site pessoal local:
-
-- interface mais limpa
-- resumo rapido na abertura
-- metas com leitura mais facil
-- movimentacoes editadas dentro do proprio app
+- `Visão geral`: leitura executiva do mês
+- `Orçamentos`: comparação entre orçado e realizado
+- `Metas`: progresso, projeções e simulações
+- `Recorrências`: compromissos fixos previstos
+- `Insights`: leitura analítica do comportamento financeiro
+- `Registros`: área operacional para cadastrar e editar tudo

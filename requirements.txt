@@ -2,6 +2,6 @@ streamlit>=1.44
 pandas>=2.2
 numpy>=1.26
 plotly>=5.24
-st-gsheets-connection>=0.1.0
 gspread>=5.8,<6
+gspread-dataframe>=3.3
 google-auth>=2.38

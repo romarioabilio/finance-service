@@ -1,2 +1,1 @@
-nome_meta,valor_alvo,data_limite,saldo_inicial
-CARRO,55000.0,2027-12-31,18525.0
+nome_meta,valor_alvo,data_limite,saldo_inicial,prioridade,status
